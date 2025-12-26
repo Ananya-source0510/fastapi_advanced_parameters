@@ -1,0 +1,3 @@
+@app.get("/search/")
+def search_items(commons: dict = Depends(common_query_params)):
+    return commons
