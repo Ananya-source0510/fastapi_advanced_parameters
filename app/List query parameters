@@ -1,0 +1,9 @@
+@app.get("/filter/")
+def filter_items(
+    tags: List[str] = Query(..., description="Multiple tags allowed"),
+    sort_by: Optional[str] = Query("created_at", regex="^(created_at|price|name)$")
+):
+    return {
+        "tags": tags,
+        "sort_by": sort_by
+    }
