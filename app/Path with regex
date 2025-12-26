@@ -1,0 +1,9 @@
+@app.get("/items/{item_code}")
+def get_item(
+    item_code: str = Path(
+        ...,
+        regex="^[A-Z]{3}-[0-9]{4}$",
+        description="Format: ABC-1234"
+    )
+):
+    return {"item_code": item_code}
